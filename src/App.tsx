@@ -1,68 +1,54 @@
-import React, { useCallback, useEffect, useState } from "react"
-import logo from "./assets/logo.svg"
+import React from "react"
+
+// import { useCallback, useEffect, useState } from "react"
+import logo from "./assets/peerlab-logo.svg"
+import icon from "./assets/peerlab-icon.svg"
 import "./App.css"
-import { counter } from "./agent"
+// import { counter } from "./agent"
 
 function App() {
-  const [count, setCount] = useState()
+  // const [count, setCount] = useState()
 
-  const refreshCounter = useCallback(async () => {
-    const res: any = await counter.getValue()
-    setCount(res.toString())
-  }, [])
+  // const refreshCounter = useCallback(async () => {
+  //   const res: any = await counter.getValue()
+  //   setCount(res.toString())
+  // }, [])
 
-  useEffect(() => {
-    refreshCounter()
-  }, [])
+  // useEffect(() => {
+  //   refreshCounter()
+  // }, [])
 
-  const onIncrementClick = useCallback(async () => {
-    await counter.increment()
-    refreshCounter()
-  }, [counter])
+  // const onIncrementClick = useCallback(async () => {
+  //   await counter.increment()
+  //   refreshCounter()
+  // }, [counter])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Internet Computer + Vite + React!</p>
-        <p>
-          <button className="demo-button" onClick={onIncrementClick}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://sdk.dfinity.org/docs/developers-guide/sdk-guide.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            IC SDK Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <div className="app" >
+        <main>
+          <section>
+            <img 
+              src={icon}
+              alt="Peerlab"
+              width={300}
+              height={300}
+            />
+          </section>             
+        </main>
+        <footer>
+          Powered by
+          <span className="footer-span">
+            <a href="https://www.peerlab.com.br" target="_blank">
+              <img 
+                src={logo}
+                alt="Peerlab"
+                width={100}
+                height={15}
+              />
+            </a>
+          </span>          
+        </footer>
+      </div>
   )
 }
 
