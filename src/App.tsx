@@ -28,7 +28,7 @@ const App:React.FunctionComponent<{}> = () => {
                 path={route.path}
                 exact={route.exact}
                 render={(props:RouteComponentProps<any>) => {
-                  return <route.component {...props}/>
+                  return <route.component {...props} {...route.props}/>
                 }}                
                />              
             )

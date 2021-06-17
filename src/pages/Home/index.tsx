@@ -6,9 +6,10 @@ import favicon from '../../assets/favicon.ico'
 import logo from "../../assets/peerlab-logo.svg"
 import icon from "../../assets/peerlab-icon.svg"
 import styles from './index.module.scss'
+import { PageProps } from "../index.interface";
 // import { counter } from "./agent"
 
-export const Home:React.FunctionComponent = () => {
+export const Home:React.FC<PageProps> = ({title}) => {
   // const [count, setCount] = useState()
 
   // const refreshCounter = useCallback(async () => {
@@ -29,7 +30,7 @@ export const Home:React.FunctionComponent = () => {
     <>        
       <div className={styles.contentContainer}>
         <Helmet>
-          <title>Peerlab | Home</title>
+          <title>{title}</title>
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
         </Helmet>
         <main>
