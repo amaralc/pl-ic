@@ -1,12 +1,12 @@
 import React from "react"
 import {Helmet} from "react-helmet";
-import { Home } from "./pages";
+import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 
-// import { useCallback, useEffect, useState } from "react"
+import { routes } from "./routes";
 import favicon from './assets/favicon.ico'
 import './styles/global.scss'
 
-function App() {
+const App:React.FunctionComponent<{}> = () => {
   
   return (
     <div className="app" >
@@ -19,7 +19,22 @@ function App() {
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
         <link rel="canonical" href="https://www.peerlab.com.br" />
       </Helmet>
-      <Home/>
+      <BrowserRouter>
+        <Switch>
+          {routes.map((route, index) => {
+            return (
+              <Route 
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                render={(props:RouteComponentProps<any>) => {
+                  return <route.component {...props} {...route.props}/>
+                }}                
+               />              
+            )
+          })}
+        </Switch>       
+      </BrowserRouter>
     </div>
   )
 }
