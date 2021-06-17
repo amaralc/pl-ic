@@ -1,54 +1,26 @@
 import React from "react"
+import {Helmet} from "react-helmet";
+import { Home } from "./pages";
 
 // import { useCallback, useEffect, useState } from "react"
-import logo from "./assets/peerlab-logo.svg"
-import icon from "./assets/peerlab-icon.svg"
-import "./App.css"
-// import { counter } from "./agent"
+import favicon from './assets/favicon.ico'
+import './styles/global.scss'
 
 function App() {
-  // const [count, setCount] = useState()
-
-  // const refreshCounter = useCallback(async () => {
-  //   const res: any = await counter.getValue()
-  //   setCount(res.toString())
-  // }, [])
-
-  // useEffect(() => {
-  //   refreshCounter()
-  // }, [])
-
-  // const onIncrementClick = useCallback(async () => {
-  //   await counter.increment()
-  //   refreshCounter()
-  // }, [counter])
-
+  
   return (
     <div className="app" >
-        <main>
-          <section>
-            <img 
-              src={icon}
-              alt="Peerlab"
-              width={300}
-              height={300}
-            />
-          </section>             
-        </main>
-        <footer>
-          Powered by
-          <span className="footer-span">
-            <a href="https://www.peerlab.com.br" target="_blank">
-              <img 
-                src={logo}
-                alt="Peerlab"
-                width={100}
-                height={15}
-              />
-            </a>
-          </span>          
-        </footer>
-      </div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Peerlab</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet"></link>
+        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+        <link rel="canonical" href="https://www.peerlab.com.br" />
+      </Helmet>
+      <Home/>
+    </div>
   )
 }
 
