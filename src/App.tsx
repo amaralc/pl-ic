@@ -1,35 +1,10 @@
 import React from "react"
 import {Helmet} from "react-helmet";
-import { Home } from "./pages/Home";
-import { Labs } from "./pages/Labs";
-import { Equipment } from "./pages/Equipment";
-import { BrowserRouter, Switch, Route, RouteProps, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 
-// import { useCallback, useEffect, useState } from "react"
+import { routes } from "./routes";
 import favicon from './assets/favicon.ico'
 import './styles/global.scss'
-
-interface CustomRouteProps extends Omit<RouteProps, "component"> {
-  component: React.ElementType;
-}
-
-const routes: CustomRouteProps[] = [
-  {
-    path: '/',
-    component: Home,
-    exact: true,
-  },
-  {
-    path: '/labs',
-    component: Labs,
-    exact: true
-  },
-  {
-    path: '/equipment',
-    component: Labs,
-    exact: true
-  }
-]
 
 const App:React.FunctionComponent<{}> = () => {
   
@@ -58,8 +33,6 @@ const App:React.FunctionComponent<{}> = () => {
                />              
             )
           })}
-          <Route exact path="/labs" render={(props) => (<Labs/>)}/>
-          <Route exact path="/equipment" render={(props) => (<Equipment/>)}/>
         </Switch>       
       </BrowserRouter>
     </div>
