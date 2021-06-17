@@ -2,13 +2,13 @@ import React from "react"
 import {Helmet} from "react-helmet";
 
 // import { useCallback, useEffect, useState } from "react"
-import favicon from '../assets/favicon.ico'
-import logo from "../assets/peerlab-logo.svg"
-import icon from "../assets/peerlab-icon.svg"
-import styles from './home.module.scss'
+import favicon from '../../assets/favicon.ico'
+import logo from "../../assets/peerlab-logo.svg"
+import icon from "../../assets/peerlab-icon.svg"
+import styles from './index.module.scss'
 // import { counter } from "./agent"
 
-export const Home = () => {
+export const Labs:React.FunctionComponent = () => {
   // const [count, setCount] = useState()
 
   // const refreshCounter = useCallback(async () => {
@@ -29,7 +29,7 @@ export const Home = () => {
     <>        
       <div className={styles.contentContainer}>
         <Helmet>
-          <title>Peerlab | Home</title>
+          <title>Peerlab | Labs</title>
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
         </Helmet>
         <main>
@@ -42,19 +42,6 @@ export const Home = () => {
             />
           </section>             
         </main>
-        <footer>
-          Powered by
-          <span>
-            <a href="https://www.peerlab.com.br" target="_blank">
-              <img 
-                src={logo}
-                alt="Peerlab"
-                width={100}
-                height={15}
-              />
-            </a>
-          </span>          
-        </footer>
       </div> 
     </>
   )
